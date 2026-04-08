@@ -1,0 +1,5 @@
+metric,value,unit
+Spec lint status,81,demo
+Operation coverage,82,demo
+Client generation readiness,83,demo
+Example linkage,84,demo

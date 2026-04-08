@@ -1,27 +1,79 @@
 # Seppmail-OpenAPI
 
-> OpenAPI, Postman and request bootstrap material for exploring and integrating the SEPPmail REST API.
+![Repository header](docs/images/repo-header.svg)
+![partner](https://img.shields.io/badge/partner-SEPPmail-0050b3) ![maintainer](https://img.shields.io/badge/maintainer-Synedat%20Group%20GmbH-111827) ![focus](https://img.shields.io/badge/focus-mail%20security%20%26%20operations-0f766e) ![governance](https://img.shields.io/badge/governance-ISO%2027001%20%7C%20BAIT%20%7C%20DORA%20%7C%20TISAX-7c3aed) ![docs-hygiene](https://github.com/synedat/Seppmail-OpenAPI/actions/workflows/docs-hygiene.yml/badge.svg) ![python-ci](https://github.com/synedat/Seppmail-OpenAPI/actions/workflows/python-ci.yml/badge.svg) ![iac-validate](https://github.com/synedat/Seppmail-OpenAPI/actions/workflows/iac-validate.yml/badge.svg) ![repo-hygiene](https://github.com/synedat/Seppmail-OpenAPI/actions/workflows/repo-hygiene.yml/badge.svg)
 
-This repository is curated by Synedat Group GmbH for the SEPPmail ecosystem. It is intended as an implementation accelerator for customers, partners and delivery teams.
+> OpenAPI and Postman-oriented assets for documenting and testing SEPPmail API capabilities.
 
-## Why this repository exists
+This repository is maintained in a consistent public format by **Synedat Group GmbH** for the **SEPPmail ecosystem**. It is designed to be useful in discovery, implementation, operations, troubleshooting, architecture review and controlled handover scenarios.
 
-This repository is designed to be immediately useful in workshops, pilots, production preparation and knowledge transfer. It combines upstream material with additional operational context, safer examples and governance-oriented documentation so that teams can move from an interesting script to a reviewable implementation asset.
+## What this repository is for
+
+The focus is **schema-first thinking, contract review, example generation, linting and API discoverability**.
+
+It should help teams move from isolated commands or scripts to a more reviewable and reusable operating baseline.
 
 ## Intended audience
 
-Developers, platform teams and integration engineers.
+API designers, integrators, testers and developer enablement teams.
 
-## What you will find here
+## Repository highlights
 
-- `docs/ARCHITECTURE.md` - component view and trust boundaries
-- `docs/RBAC-AND-PERMISSIONS.md` - practical role separation guidance
-- `docs/SECURITY-AND-COMPLIANCE.md` - implementation mapping for ISO 27001, BAIT, DORA, TISAX and NIS2
-- `docs/OPERATIONS.md` - operational lifecycle and evidence ideas
-- `docs/TROUBLESHOOTING.md` - first-line support guidance
-- `docs/SEPPMAIL-REFERENCES.md` - official reference list
-- `docs/images/architecture-overview.svg` - lightweight architecture visual
+- production-minded examples instead of bare placeholders
+- stronger documentation depth for architecture, permissions and operations
+- reusable guidance for evidence capture and change-safe execution
+- consistent Synedat references and public discoverability across repositories
+- compliance-aware wording for ISO/IEC 27001, BAIT, DORA, TISAX and adjacent governance themes
+
+## Main building blocks
+
+- OpenAPI spec
+- Postman environment
+- Request examples
+- Governance and review notes
+
+## Quick start
+
+1. Inspect the OpenAPI schema and version metadata.
+2. Run a simple curl or Postman request.
+3. Add contract review and linting before generating downstream clients.
+
+## Typical use cases
+
+- API discovery and onboarding
+- Contract review
+- Collection building for demos
+- Client generation and test harness creation
+
+## Permissions approach
+
+- Read-only API access for exploration
+- Separate write-capable credential for destructive tests
+- Reviewer role for approving collection changes
+
+## Documentation map
+
+- `docs/ARCHITECTURE.md`
+- `docs/RBAC-AND-PERMISSIONS.md`
+- `docs/SECURITY-AND-COMPLIANCE.md`
+- `docs/SEPPMAIL-REFERENCES.md`
+- `docs/USE-CASES.md`
+- `docs/CLIENT-GENERATION.md`
+- `docs/THREAT-MODEL.md`
+- `docs/OBSERVABILITY.md`
+- `docs/CONTROL-MAPPING.md`
+- `docs/ADOPTION-GUIDE.md`
+- `docs/CHANGE-MANAGEMENT.md`
+- `docs/EVIDENCE-AND-AUDIT.md`
+- `docs/EXTENSIONS-AND-ROADMAP.md`
+- `docs/OPERATIONS.md`
+- `docs/TROUBLESHOOTING.md`
+- `docs/DIAGRAMS.md`
+
+## Example catalogue
+
 - `examples/curl-healthcheck.sh`
+- `examples/openapi-diff.py`
 - `examples/postman-collection-guide.md`
 - `examples/python-request.py`
 
@@ -29,41 +81,184 @@ Developers, platform teams and integration engineers.
 
 ```mermaid
 flowchart LR
-    A[Automation script or Postman] --> B[Authentication]
-    B --> C[SEPPmail API endpoint]
-    C --> D[Domain object / action]
-    C --> E[Audit log]
-    E --> F[SIEM / monitoring]
+    A[Operator or pipeline] --> B[Repository examples and docs]
+    B --> C[schema-first thinking, contract review, example generation, linting and API discoverability]
+    C --> D[Validation and evidence]
+    D --> E[Operations and improvement]
 ```
 
-## Practical focus
+Additional visuals:
+- `docs/images/architecture-overview.svg`
+- `docs/images/trust-boundaries.svg`
+- `docs/images/operations-lifecycle.svg`
 
-- usable examples rather than empty scaffolding
-- security-conscious defaults and notes on secrets handling
-- architecture and permissions thinking, not just commands
-- audit-friendly documentation structure
-- consistent Synedat branding and discoverability across repositories
+## Functional extension ideas
 
-## Security and governance themes
+- Add Spectral linting
+- Generate language-specific clients
+- Add mock server or response examples for offline work
 
-This repository intentionally includes implementation notes that align well with:
-- ISO/IEC 27001 style ISMS and control evidence
-- BAIT expectations for banking IT governance and operations
-- DORA-oriented operational resilience thinking
-- TISAX-oriented supplier and security process maturity
-- NIS2-style cyber hygiene and incident preparedness
+## Security and governance note
+
+The content in this repository is written as implementation guidance and example material. It can support evidence-oriented work for information security and operational resilience, but it does not replace formal policy, legal interpretation, certification scope or vendor support statements.
 
 ## Official SEPPmail references
 
-- [API functions overview](https://docs.seppmail.com/en/09_ht_admin_api-functions.html)
-- [SEPPmail API reference landing page](https://docs.seppmail.com/api)
+See `docs/SEPPMAIL-REFERENCES.md` for curated vendor documentation references.
 
 ## Synedat
 
-Synedat Group GmbH works across software engineering, cloud, infrastructure, operations and security-related implementation projects. These repositories are structured to be useful both as public technical starters and as conversation starters for concrete customer delivery.
+Synedat Group GmbH works across software engineering, cloud, infrastructure, operations and security-related implementation projects. These repositories are structured as public technical starters that are also usable in real delivery conversations.
 
 Website: https://www.synedat.com/
 
-## Upstream and provenance
+## Contribution style
 
-Where an original SEPPmail community repository was available, its source files were preserved and extended. Original README content, where replaced, was moved to `docs/upstream/ORIGINAL-README.md` for traceability.
+Contributions are welcome when they improve usefulness, safety, reviewability or documentation quality. Prefer examples that are realistic, least-privilege aware and easy to adapt.
+
+## New starter assets in v6
+
+- `examples/openapi-to-markdown.py`
+- `examples/validate-openapi.sh`
+- `examples/curl-healthcheck.sh`
+- `examples/openapi-diff.py`
+- `examples/postman-collection-guide.md`
+- `examples/python-request.py`
+
+## Delivery accelerators
+
+- GitHub Actions workflows for docs hygiene, repository hygiene and technology-specific checks
+- Visual repo header plus reusable SVG architecture assets
+- Release, branching and versioning guidance in `docs/BRANCHING-AND-RELEASES.md`
+- Pipeline guidance in `docs/PIPELINES-AND-QUALITY-GATES.md`
+- Access model companion in `docs/ACCESS-MATRIX.md`
+- Metrics, SLO and evidence ideas in `docs/METRICS-AND-SLOS.md`
+
+## Functional extension backlog
+
+- Spectral linting
+- client generation hints
+- mock server usage
+- contract diff automation
+
+## Visual and documentation assets
+
+- `docs/images/repo-header.svg`
+- `docs/VISUALS-AND-HEADER.md`
+- `docs/BRANCHING-AND-RELEASES.md`
+- `docs/PIPELINES-AND-QUALITY-GATES.md`
+- `docs/ACCESS-MATRIX.md`
+- `docs/METRICS-AND-SLOS.md`
+
+## Findability and discoverability
+
+This repository intentionally uses searchable, implementation-oriented wording around SEPPmail, mail security, Exchange Online, Microsoft 365, Azure, operations, automation, API integration, Terraform, Bicep, PowerShell and governance-aware delivery so that architects, engineers and project teams can find relevant starting points faster.
+
+## Documentation and community
+
+- `docs/index.md` - GitHub Pages starter landing page
+- `docs/DEMO-SCENARIOS.md` - ready-to-use demo and workshop ideas
+- `docs/COMMUNITY-AND-SOCIAL.md` - starter copy for posts, announcements and repo sharing
+- `docs/RELEASE-NOTES.md` - compact release-oriented summary
+- `wiki/Home.md` - seed content for a GitHub wiki
+- `docs/images/repo-social-card.svg` - visual header/social card asset
+- `docs/images/demo-dashboard.svg` - placeholder demo visual for screenshots and docs
+
+## Findability and consistency
+
+This repository follows a consistent Synedat public structure so that engineers can discover architecture notes, permissions guidance, compliance mappings, examples, troubleshooting content and extension ideas quickly.
+
+## Governance and community
+
+This repository includes public governance and collaboration building blocks to make reuse easier and safer:
+
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Security Disclosure](docs/SECURITY-DISCLOSURE.md)
+- [Legal and Licensing Notes](docs/LEGAL-AND-LICENSING.md)
+- [GitHub Discussions Setup](docs/GITHUB-DISCUSSIONS-SETUP.md)
+- [Maintainers and Ownership](docs/MAINTAINERS.md)
+- [Public Roadmap](docs/ROADMAP-PUBLIC.md)
+- [Landing Page Copy](docs/LANDING-PAGE-COPY.md)
+
+## Additional operational detail
+
+For a deeper public-facing operating model, also review:
+
+- [Access Matrix](docs/ACCESS-MATRIX.md)
+- [Threat Model](docs/THREAT-MODEL.md)
+- [Control Mapping](docs/CONTROL-MAPPING.md)
+- [Evidence and Audit](docs/EVIDENCE-AND-AUDIT.md)
+- [Pipelines and Quality Gates](docs/PIPELINES-AND-QUALITY-GATES.md)
+- [Visuals and Header](docs/VISUALS-AND-HEADER.md)
+
+
+![Governance overview](docs/images/governance-overview.svg)
+
+## Demo content and sample outputs
+
+This repository now includes reusable demo material so that it can be shown in workshops, customer conversations, architecture reviews and onboarding sessions without requiring a live environment.
+
+- `demo-data/sample-result.json`
+- `demo-data/sample-config.yaml`
+- `demo-data/sample-health-report.csv`
+- `docs/EXAMPLE-OUTPUTS.md`
+- `examples/demo-walkthrough.md`
+
+## Landing page and presentation structure
+
+To make the repository easier to present and easier to find, the following assets are included:
+
+- `docs/HOMEPAGE-STRUCTURE.md`
+- `docs/WORKSHOP-KIT.md`
+- `docs/RELEASE-CONTENT.md`
+- `docs/BADGE-URLS.md`
+- `docs/SCREENSHOT-PLAN.md`
+- `docs/FUNCTIONAL-EXTENSIONS-v9.md`
+- `docs/images/homepage-hero.svg`
+- `docs/images/landing-page-wireframe.svg`
+
+## Sample deliverables for this repository
+
+- OpenAPI specs
+- linting guidance
+- postman assets
+- client generation hints
+
+## Search and discovery hints
+
+The content of this repository is intentionally written so that it is easier to discover around these terms: openapi, swagger, rest api, seppmail spec, synedat.
+
+## Synedat note
+
+Synedat Group GmbH uses a consistent public repository structure to make reusable engineering assets easier to evaluate, adapt and operate across architecture, automation, security and operational resilience topics.
+
+
+
+        ## v10 demo pages and richer sample artifacts
+
+        This repository now includes a small HTML demo page and richer sample artifacts that help present functionality without a live environment.
+
+        - `pages/index.html`
+        - `demo-data/sample-report.json`
+        - `demo-data/sample-events.ndjson`
+        - `demo-data/sample-metrics.csv`
+        - `docs/DETAILED-ARCHITECTURE-v10.md`
+        - `docs/IMPLEMENTATION-PLAYBOOK-v10.md`
+        - `docs/USE-CASE-CATALOG-v10.md`
+        - `docs/EXAMPLE-REPORTS-v10.md`
+        - `docs/PORTFOLIO-LINKS-v10.md`
+        - `docs/SEARCH-KEYWORDS-v10.md`
+        - `docs/images/homepage-hero-v10.svg`
+        - `docs/images/architecture-delivery-view.svg`
+
+        ## Suggested metrics and storyline
+
+        Use these metrics and discussion anchors in demos, release notes and workshops:
+        - Spec lint status
+- Operation coverage
+- Client generation readiness
+- Example linkage
+
+        ## Synedat public portfolio angle
+
+        This repository is part of a broader Synedat portfolio that intentionally combines technical examples, architecture guidance, operations depth and governance-aware documentation so that teams can discover useful starting points faster.

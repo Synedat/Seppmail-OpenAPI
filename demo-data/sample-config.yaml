@@ -1,0 +1,14 @@
+environment: demo
+repository: Seppmail-OpenAPI
+partner: SEPPmail
+maintainer: Synedat Group GmbH
+focus: OpenAPI descriptions, validation and client-generation support for SEPPmail endpoints
+controls:
+  - ISO/IEC 27001
+  - BAIT
+  - DORA
+  - TISAX
+  - NIS2
+notes:
+  - Example configuration only
+  - Adjust permissions and network ranges before production use

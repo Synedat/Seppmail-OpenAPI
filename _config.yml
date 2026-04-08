@@ -1,0 +1,4 @@
+title: Seppmail-OpenAPI
+description: OpenAPI and Postman-oriented assets for documenting and testing SEPPmail API capabilities.
+theme: minima
+markdown: kramdown
