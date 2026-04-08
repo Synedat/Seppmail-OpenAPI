@@ -1,48 +1,69 @@
 # Seppmail-OpenAPI
 
-> OpenAPI, Swagger and Postman helper assets for SEPPmail API work.
+> OpenAPI, Postman and request bootstrap material for exploring and integrating the SEPPmail REST API.
 
-**Partner resource by Synedat for the SEPPmail ecosystem.**
+This repository is curated by Synedat Group GmbH for the SEPPmail ecosystem. It is intended as an implementation accelerator for customers, partners and delivery teams.
 
 ## Why this repository exists
 
-OpenAPI YAML, Postman environment and helper script for faster API exploration and integration work around SEPPmail.
+This repository is designed to be immediately useful in workshops, pilots, production preparation and knowledge transfer. It combines upstream material with additional operational context, safer examples and governance-oriented documentation so that teams can move from an interesting script to a reviewable implementation asset.
 
-This repository is structured for public consumption and easy discovery across topics such as SEPPmail, Exchange Online, Microsoft 365, Azure, API automation, PowerShell and operational runbooks.
+## Intended audience
 
-## Included content
+Developers, platform teams and integration engineers.
 
-- `seppmail_rest_api.yaml`
-- `SEPPmail_Example.postman_environment`
-- `postmanConfig.js`
+## What you will find here
 
-## Quick start
+- `docs/ARCHITECTURE.md` - component view and trust boundaries
+- `docs/RBAC-AND-PERMISSIONS.md` - practical role separation guidance
+- `docs/SECURITY-AND-COMPLIANCE.md` - implementation mapping for ISO 27001, BAIT, DORA, TISAX and NIS2
+- `docs/OPERATIONS.md` - operational lifecycle and evidence ideas
+- `docs/TROUBLESHOOTING.md` - first-line support guidance
+- `docs/SEPPMAIL-REFERENCES.md` - official reference list
+- `docs/images/architecture-overview.svg` - lightweight architecture visual
+- `examples/curl-healthcheck.sh`
+- `examples/postman-collection-guide.md`
+- `examples/python-request.py`
 
-1. Import the OpenAPI YAML or the Postman assets into your preferred API client.
-2. Replace placeholders with test-system endpoints and credentials only.
-3. Keep secrets in client-side environments, never in committed files.
+## Architecture at a glance
+
+```mermaid
+flowchart LR
+    A[Automation script or Postman] --> B[Authentication]
+    B --> C[SEPPmail API endpoint]
+    C --> D[Domain object / action]
+    C --> E[Audit log]
+    E --> F[SIEM / monitoring]
+```
+
+## Practical focus
+
+- usable examples rather than empty scaffolding
+- security-conscious defaults and notes on secrets handling
+- architecture and permissions thinking, not just commands
+- audit-friendly documentation structure
+- consistent Synedat branding and discoverability across repositories
+
+## Security and governance themes
+
+This repository intentionally includes implementation notes that align well with:
+- ISO/IEC 27001 style ISMS and control evidence
+- BAIT expectations for banking IT governance and operations
+- DORA-oriented operational resilience thinking
+- TISAX-oriented supplier and security process maturity
+- NIS2-style cyber hygiene and incident preparedness
 
 ## Official SEPPmail references
 
-- [API functions](https://docs.seppmail.com/en/09_ht_admin_api-functions.html)
-- [SEPPmail API docs](https://docs.seppmail.com/api)
-- [seppmail.cloud REST API](https://docs.seppmail.com/en/cloud/c05_sca_05_rest_api.html)
+- [API functions overview](https://docs.seppmail.com/en/09_ht_admin_api-functions.html)
+- [SEPPmail API reference landing page](https://docs.seppmail.com/api)
 
-## Publishing notes
+## Synedat
 
-- keep repository description and topics aligned with `.github/repository-profile.md`
-- add a concise repository subtitle in GitHub
-- use consistent Synedat branding across all public SEPPmail repositories
-- keep customer-specific values out of the public repository
+Synedat Group GmbH works across software engineering, cloud, infrastructure, operations and security-related implementation projects. These repositories are structured to be useful both as public technical starters and as conversation starters for concrete customer delivery.
 
-## About Synedat
+Website: https://www.synedat.com/
 
-Synedat publishes practical, reusable assets around software engineering, IT operations, cloud integration and automation.
+## Upstream and provenance
 
-- Website: https://www.synedat.com/
-- Company profile: https://www.synedat.com/en/
-
-## Partner note
-
-This repository is published by Synedat as a partner-oriented resource for the SEPPmail ecosystem. Product ownership, roadmap and official support remain with SEPPmail.
-
+Where an original SEPPmail community repository was available, its source files were preserved and extended. Original README content, where replaced, was moved to `docs/upstream/ORIGINAL-README.md` for traceability.
